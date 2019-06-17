@@ -17,7 +17,7 @@ if __name__ == "__main__":
         out_filename = file.replace(".tcx", ".csv")
 
         with open(out_filename, "w") as out_file:
-            out_file.write("time,distance,longitude,latitude")
+            out_file.write("time,distance,longitude,latitude\n")
 
             for trackpoint in trackpoints:
                 time = trackpoint.get("Time")

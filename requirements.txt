@@ -2,3 +2,5 @@ xmltodict
 numpy
 pandas
 matplotlib
+geopandas
+mplleaflet
