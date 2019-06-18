@@ -3,7 +3,7 @@ from glob import glob
 
 
 if __name__ == "__main__":
-    FILE_PATTERN = "data/Takeout/Fit/Activities/*.tcx"
+    FILE_PATTERN = "data/Takeout/Fit/Activities/**/*.tcx"
 
     for file in glob(FILE_PATTERN):
         with open(file) as fd:
@@ -19,16 +19,18 @@ if __name__ == "__main__":
         with open(out_filename, "w") as out_file:
             out_file.write("time,distance,longitude,latitude\n")
 
-            for trackpoint in trackpoints:
-                time = trackpoint.get("Time")
-                distance = trackpoint.get("DistanceMeters")
-                position = trackpoint.get("Position")
-                lat = lon = ""
-                if position:
-                    lat = position["LatitudeDegrees"]
-                    lon = position["LongitudeDegrees"]
+            try:
+                for trackpoint in trackpoints:
+                    time = trackpoint.get("Time")
+                    distance = trackpoint.get("DistanceMeters")
+                    position = trackpoint.get("Position")
+                    lat = lon = ""
+                    if position:
+                        lat = position["LatitudeDegrees"]
+                        lon = position["LongitudeDegrees"]
 
-                out_file.write("{0},{1},{2},{3}\n".format(time, distance, lon, lat))
-
+                    out_file.write("{0},{1},{2},{3}\n".format(time, distance, lon, lat))
+            except Exception as e:
+                print("Error in file: {0}".format(file))
 
 
