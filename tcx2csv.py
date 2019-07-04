@@ -3,7 +3,7 @@ from glob import glob
 
 
 if __name__ == "__main__":
-    FILE_PATTERN = "data/Takeout/Fit/Activities/**/*.tcx"
+    FILE_PATTERN = "data/Takeout/Fit/Activities/*.tcx"
 
     for file in glob(FILE_PATTERN):
         with open(file) as fd:

@@ -5,3 +5,5 @@ pandas
 matplotlib
 geopandas
 mplleaflet
+jupyter
+ipykernel

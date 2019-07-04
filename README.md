@@ -11,3 +11,12 @@ https://takeout.google.com/
 Once downloaded, unzip and play with the CSV to your heart's content :)
 
 
+### Jupyter
+
+Running the Jupyter notebooks in Jupyter in PyCharm Community is painful.
+
+```
+pip install -r requirements.txt
+python -m ipykernel install --user --name venv --display-name "Python3 (venv)"
+jupyter notebook
+```
